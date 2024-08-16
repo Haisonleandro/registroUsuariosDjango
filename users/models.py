@@ -15,3 +15,6 @@ class persona(models.Model):
     estado = models.CharField(max_length=100,
     choices=ESTADO_CHOICES, default='activo')
     dataCreated = models.DateField(auto_now=True)
+
+    def __str__(self):
+        return self.name

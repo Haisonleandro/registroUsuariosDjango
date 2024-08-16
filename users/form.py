@@ -1,5 +1,5 @@
-form django import forms
-form .models import persona
+from django import forms
+from .models import persona
 
 
 class personaForm(forms.ModelForm):
