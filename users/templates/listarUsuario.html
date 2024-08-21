@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    
+    {% for persona in personas %}
+    <li>{{persona.nombre}}</li>
+    {% endfor %}
 </body>
 </html>
