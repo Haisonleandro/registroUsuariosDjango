@@ -5,13 +5,16 @@ from .form import personaForm
 # Create your views here.
 
 
-def registerUser(request):
+def listar_personas(request):
+    personas = persona.objects.all()
+    return render(request,'listarUsuario.html',{'personas':personas})
+
+def crear_persona(request):
     if request.method == 'POST':
         form = personaForm(request.POST)
-        if form.is_valid():
+        if form.is_valid:
             form.save()
-            return redirect('listarUsuario')
-        
+            return redirect(listar_personas)
     else:
         form = personaForm()
-    return render(request,'registroUsuario.html',{'form':form})
+        return render(request,'crear_persona.html',{'form':form})
